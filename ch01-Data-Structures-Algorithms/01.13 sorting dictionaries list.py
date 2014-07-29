@@ -25,3 +25,10 @@ print('')
 rows_by_lfname = sorted(rows, key=itemgetter('lname','fname')) # this is faster
 # it's the same like -> sorted(rows, key=lambda r: (r['lname'], r['fname']))
 pp.pprint(rows_by_lfname)
+
+
+# another kind of dictionary sort
+# sort first by values descending and then by key ascending
+d = {"P1":77, "P2":89, "P3":77}
+s = sorted(d.items(), key = lambda x:(-x[1], x[0]))
+print(s) # ('P2', 89), ('P1', 77), ('P3', 77)]
